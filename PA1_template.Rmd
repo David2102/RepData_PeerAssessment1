@@ -62,6 +62,6 @@ filledData["weekEnd"] <- "Weekday"
 filledData[filledData$weekDay == "Saturday" | filledData$weekDay == "Sunday", ]$weekEnd <- "Weekend" 
 meanStepsByWeekEndWeekDay <- aggregate(filledData$steps, by=list(filledData$interval, filledData$weekEnd), FUN=mean)
 colnames(meanStepsByWeekEndWeekDay) <- c("interval", "weekEnd", "steps")
-summary(meanStepsByWeekEndWeekDay)
+qplot(interval, steps, data = meanStepsByWeekEndWeekDay, facets = .~weekEnd, ylab = "Emissions", xlab = "Year")
 ```
 
