@@ -172,7 +172,7 @@ filledData["weekEnd"] <- "Weekday"
 filledData[filledData$weekDay == "Saturday" | filledData$weekDay == "Sunday", ]$weekEnd <- "Weekend" 
 meanStepsByWeekEndWeekDay <- aggregate(filledData$steps, by=list(filledData$interval, filledData$weekEnd), FUN=mean)
 colnames(meanStepsByWeekEndWeekDay) <- c("interval", "weekEnd", "steps")
-qplot(interval, steps, data = meanStepsByWeekEndWeekDay, facets = .~weekEnd, ylab = "Emissions", xlab = "Year")
+qplot(interval, steps, data = meanStepsByWeekEndWeekDay, facets = .~weekEnd, ylab = "Steps", xlab = "")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
